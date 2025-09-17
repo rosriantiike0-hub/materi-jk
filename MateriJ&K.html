@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial Jaringan & Komputer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f6fa;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #0b6ef6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #0747c3;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    article {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 15px;
+    }
+    article h2 {
+      color: #0b6ef6;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background: #0b6ef6;
+      color: white;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #0b6ef6;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tutorial Jaringan & Komputer</h1>
+    <p>Belajar TKJ: Praktik, Teori, dan Troubleshooting</p>
+  </header>
+
+  <nav>
+    <a href="#">Beranda</a>
+    <a href="#kabel">Kabel LAN</a>
+    <a href="#ip">IP Address</a>
+    <a href="#topologi">Topologi</a>
+    <a href="#pc">Rakit PC</a>
+  </nav>
+
+  <div class="container">
+    <article id="kabel">
+      <h2>Cara Membuat Kabel LAN</h2>
+      <p>
+        Untuk membuat kabel LAN (UTP dengan konektor RJ-45), ada dua jenis susunan kabel: 
+        <b>Straight</b> dan <b>Cross</b>.
+      </p>
+      <ul>
+        <li><b>Straight</b>: digunakan untuk menghubungkan perangkat berbeda (PC ke Switch/Hub/Router).</li>
+        <li><b>Cross</b>: digunakan untuk menghubungkan perangkat sejenis (PC ke PC, Switch ke Switch).</li>
+      </ul>
+
+      <h3>Urutan Warna Kabel LAN</h3>
+      <h4>1. Kabel Straight (T568A ke T568A atau T568B ke T568B)</h4>
+      <table>
+        <tr>
+          <th>Pin</th>
+          <th>T568A</th>
+          <th>T568B</th>
+        </tr>
+        <tr><td>1</td><td>Putih Hijau</td><td>Putih Oranye</td></tr>
+        <tr><td>2</td><td>Hijau</td><td>Oranye</td></tr>
+        <tr><td>3</td><td>Putih Oranye</td><td>Putih Hijau</td></tr>
+        <tr><td>4</td><td>Biru</td><td>Biru</td></tr>
+        <tr><td>5</td><td>Putih Biru</td><td>Putih Biru</td></tr>
+        <tr><td>6</td><td>Oranye</td><td>Hijau</td></tr>
+        <tr><td>7</td><td>Putih Coklat</td><td>Putih Coklat</td></tr>
+        <tr><td>8</td><td>Coklat</td><td>Coklat</td></tr>
+      </table>
+
+      <h4>2. Kabel Cross (T568A ke T568B)</h4>
+      <table>
+        <tr>
+          <th>Pin</th>
+          <th>T568A</th>
+          <th>T568B</th>
+        </tr>
+        <tr><td>1</td><td>Putih Hijau</td><td>Putih Oranye</td></tr>
+        <tr><td>2</td><td>Hijau</td><td>Oranye</td></tr>
+        <tr><td>3</td><td>Putih Oranye</td><td>Putih Hijau</td></tr>
+        <tr><td>6</td><td>Oranye</td><td>Hijau</td></tr>
+      </table>
+
+      <p><i>Catatan:</i> Pin 4, 5, 7, dan 8 tetap sama pada kabel Cross karena tidak digunakan dalam Ethernet 10/100 Mbps.</p>
+    </article>
+
+    <article id="ip">
+      <h2>Dasar IP Address & Subnetting</h2>
+      <p>
+        <b>IP Address</b> adalah alamat unik pada setiap perangkat dalam jaringan. 
+        Ada dua versi IP: IPv4 (contoh: 192.168.1.1) dan IPv6.
+      </p>
+      <p>
+        <b>Subnetting</b> digunakan untuk membagi jaringan besar menjadi jaringan lebih kecil agar lebih efisien.
+      </p>
+      <p><b>Kelas IP Address:</b></p>
+      <ul>
+        <li><b>Kelas A</b>: 1.0.0.0 – 126.255.255.255 (jaringan besar).</li>
+        <li><b>Kelas B</b>: 128.0.0.0 – 191.255.255.255 (jaringan menengah).</li>
+        <li><b>Kelas C</b>: 192.0.0.0 – 223.255.255.255 (jaringan kecil).</li>
+      </ul>
+
+      <h3>Subnet Mask dari /9 sampai /30</h3>
+      <table>
+        <tr>
+          <th>CIDR</th>
+          <th>Subnet Mask</th>
+          <th>Jumlah Host</th>
+        </tr>
+        <tr><td>/9</td><td>255.128.0.0</td><td>8.388.606</td></tr>
+        <tr><td>/10</td><td>255.192.0.0</td><td>4.194.302</td></tr>
+        <tr><td>/11</td><td>255.224.0.0</td><td>2.097.150</td></tr>
+        <tr><td>/12</td><td>255.240.0.0</td><td>1.048.574</td></tr>
+        <tr><td>/13</td><td>255.248.0.0</td><td>524.286</td></tr>
+        <tr><td>/14</td><td>255.252.0.0</td><td>262.142</td></tr>
+        <tr><td>/15</td><td>255.254.0.0</td><td>131.070</td></tr>
+        <tr><td>/16</td><td>255.255.0.0</td><td>65.534</td></tr>
+        <tr><td>/17</td><td>255.255.128.0</td><td>32.766</td></tr>
+        <tr><td>/18</td><td>255.255.192.0</td><td>16.382</td></tr>
+        <tr><td>/19</td><td>255.255.224.0</td><td>8.190</td></tr>
+        <tr><td>/20</td><td>255.255.240.0</td><td>4.094</td></tr>
+        <tr><td>/21</td><td>255.255.248.0</td><td>2.046</td></tr>
+        <tr><td>/22</td><td>255.255.252.0</td><td>1.022</td></tr>
+        <tr><td>/23</td><td>255.255.254.0</td><td>510</td></tr>
+        <tr><td>/24</td><td>255.255.255.0</td><td>254</td></tr>
+        <tr><td>/25</td><td>255.255.255.128</td><td>126</td></tr>
+        <tr><td>/26</td><td>255.255.255.192</td><td>62</td></tr>
+        <tr><td>/27</td><td>255.255.255.224</td><td>30</td></tr>
+        <tr><td>/28</td><td>255.255.255.240</td><td>14</td></tr>
+        <tr><td>/29</td><td>255.255.255.248</td><td>6</td></tr>
+        <tr><td>/30</td><td>255.255.255.252</td><td>2</td></tr>
+      </table>
+      <p><i>Catatan:</i> Jumlah host dihitung dengan rumus <b>(2^n - 2)</b>, di mana n = jumlah bit host.</p>
+    </article>
+
+    <article id="topologi">
+      <h2>Topologi Jaringan: Star, Bus, Ring</h2>
+      <p>
+        <b>Topologi</b> adalah cara perangkat dalam jaringan dihubungkan. 
+        Ada beberapa jenis:
+      </p>
+      <ul>
+        <li><b>Star</b>: Semua komputer terhubung ke switch/hub. Mudah dikelola, tapi jika switch rusak seluruh jaringan terganggu.</li>
+        <li><b>Bus</b>: Semua perangkat terhubung ke satu kabel utama. Murah, tapi sulit troubleshooting.</li>
+        <li><b>Ring</b>: Komputer terhubung membentuk lingkaran. Data berjalan searah, jika satu titik rusak bisa memutus jaringan.</li>
+      </ul>
+      <p>
+        Pemilihan topologi tergantung kebutuhan, biaya, dan skala jaringan.
+      </p>
+    </article>
+
+    <article id="pc">
+      <h2>Cara Merakit PC</h2>
+      <p><b>Langkah-langkah merakit komputer:</b></p>
+      <ol>
+        <li>Siapkan komponen: casing, motherboard, prosesor, RAM, PSU, harddisk/SSD, VGA (opsional).</li>
+        <li>Pasang prosesor ke soket motherboard, lalu pasang pendingin (heatsink/fan).</li>
+        <li>Pasang RAM pada slot yang tersedia.</li>
+        <li>Pasang motherboard ke casing.</li>
+        <li>Sambungkan PSU (power supply) ke motherboard dan perangkat lain.</li>
+        <li>Pasang harddisk/SSD ke slot drive.</li>
+        <li>Sambungkan kabel data (SATA) dan kabel power.</li>
+        <li>Pasang kartu grafis (jika ada).</li>
+        <li>Tutup casing, hubungkan monitor, keyboard, mouse, lalu nyalakan.</li>
+      </ol>
+      <h3>Komponen Utama PC dan Fungsinya</h3>
+      <ul>
+        <li><b>Motherboard</b>: papan utama tempat semua komponen terpasang.</li>
+        <li><b>Processor (CPU)</b>: otak komputer, melakukan proses perhitungan.</li>
+        <li><b>RAM</b>: penyimpanan sementara untuk data yang sedang diproses.</li>
+        <li><b>Storage (HDD/SSD)</b>: tempat menyimpan data dan sistem operasi.</li>
+        <li><b>PSU</b>: menyuplai daya ke semua komponen.</li>
+        <li><b>VGA/Graphics Card</b>: mengolah tampilan visual (grafis).</li>
+        <li><b>Casing</b>: wadah untuk melindungi semua komponen.</li>
+        <li><b>Cooling System</b>: kipas/heatsink untuk menjaga suhu tetap stabil.</li>
+      </ul>
+      <p>
+        Setelah PC selesai dirakit, lakukan instalasi sistem operasi seperti Windows atau Linux. 
+        Jangan lupa juga instal driver agar semua hardware berfungsi dengan optimal.
+      </p>
+    </article>
+  </div>
+
+  <footer>
+    &copy; 2025 Tutorial Jaringan & Komputer - SMKN 1 Jamblang
+  </footer>
+</body>
+</html>
